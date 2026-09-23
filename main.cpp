@@ -9,7 +9,7 @@ int main() {
     int quantity;
     double unitPrice;
     char isMember;
-
+    string cashierNotes;
     //gets the input from the user
     cout << "Enter the name of the food item: ";
     getline(cin, foodName);
@@ -25,6 +25,12 @@ int main() {
 
     cout << "Is the customer a member? (y/n): ";
     cin >> isMember;
+
+    // Clear leftover newline before getline()
+    cin.ignore();
+    
+    cout << "Enter cashier notes: ";
+    getline(cin, cashierNotes);
 
     //actually does the calculations
     double subCost = quantity * unitPrice;
@@ -43,8 +49,24 @@ int main() {
     cout << left << setw(15) << "Subtotal:" << right << setw(10) << subCost << endl;
     cout << left << setw(15) << "Discount:" << right << setw(10) << discount << endl;
     cout << left << setw(15) << "TOTAL:" << right << setw(10) << totalCost << endl;
-
+    cout << "\nCashier Notes:\n" << cashierNotes << endl;
     cout << "=============================\n";
+    
+    
+    // Inventory Audit Table
+    cout << "\n====== INVENTORY AUDIT ======\n";
+    cout << left << setw(15) << "Item Name"
+         << setw(10) << "Code"
+         << setw(10) << "Qty"
+         << setw(12) << "Unit Price"
+         << setw(12) << "Subtotal"
+         << endl;
 
+    cout << left << setw(15) << foodName
+         << setw(10) << itemCode
+         << setw(10) << quantity
+         << setw(12) << unitPrice
+         << setw(12) << subCost
+         << endl;
     return 0;
 }
