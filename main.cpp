@@ -5,24 +5,42 @@ using namespace std;
 
 int main() {
     string foodName;
-    char itemCode;
+    char menuChoice;
+    char size;
     int quantity;
     double unitPrice;
     char isMember;
     string cashierNotes;
     //gets the input from the user
-    cout << "Enter the name of the food item: ";
-    getline(cin, foodName);
+    cout << "================ DRINK MENU ================\n";
+    cout << left << setw(20) << "Drink"
+        << setw(12) << "Small"
+        << setw(12) << "Medium"
+        << setw(12) << "Large" << endl;
 
-    cout << "Enter the item code (single character): ";
-    cin >> itemCode;
+    cout << left << setw(20) << "A. Apple Juice"
+        << setw(12) << "2.50"
+        << setw(12) << "3.50"
+        << setw(12) << "4.50" << endl;
+
+    cout << left << setw(20) << "B. Lemonade"
+        << setw(12) << "2.00"
+        << setw(12) << "3.00"
+        << setw(12) << "4.00" << endl;
+
+    cout << left << setw(20) << "C. Soda"
+        << setw(12) << "1.50"
+        << setw(12) << "2.50"
+        << setw(12) << "3.50" << endl;
+    cout << "\nSelect a drink (A, B, or C): ";
+    cin >> menuChoice;
+
+    
 
     cout << "Enter the quantity: ";
     cin >> quantity;
 
-    cout << "Enter the unit price: ";
-    cin >> unitPrice;
-
+   
     cout << "Is the customer a member? (y/n): ";
     cin >> isMember;
 
