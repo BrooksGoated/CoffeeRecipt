@@ -34,12 +34,45 @@ int main() {
         << setw(12) << "3.50" << endl;
     cout << "\nSelect a drink (A, B, or C): ";
     cin >> menuChoice;
+    cout << "Select a size (s, m, or l): ";
+    cin >> size;
+    if (menuChoice == 'A' || menuChoice == 'a') {
+        foodName = "Apple Juice";
+    }
 
-    
-
+    else if (menuChoice == 'B' || menuChoice == 'b') {
+        foodName = "Lemonade";
+    }
+    else if (menuChoice == 'C' || menuChoice == 'c') {
+        foodName = "Soda";
+    }
+    if (size == 's' || size == 'S') {
+        if (menuChoice == 'A' || menuChoice == 'a')
+            unitPrice = 2.50;
+        else if (menuChoice == 'B' || menuChoice == 'b')
+            unitPrice = 2.00;
+        else if (menuChoice == 'C' || menuChoice == 'c')
+            unitPrice = 1.50;
+    }
+    else if (size == 'm' || size == 'M') {
+        if (menuChoice == 'A' || menuChoice == 'a')
+            unitPrice = 3.50;
+        else if (menuChoice == 'B' || menuChoice == 'b')
+            unitPrice = 3.00;
+        else if (menuChoice == 'C' || menuChoice == 'c')
+            unitPrice = 2.50;
+    }
+    else if (size == 'l' || size == 'L') {
+        if (menuChoice == 'A' || menuChoice == 'a')
+            unitPrice = 4.50;
+        else if (menuChoice == 'B' || menuChoice == 'b')
+            unitPrice = 4.00;
+        else if (menuChoice == 'C' || menuChoice == 'c')
+            unitPrice = 3.50;
+    }
     cout << "Enter the quantity: ";
-    cin >> quantity;
 
+    cin >> quantity;
    
     cout << "Is the customer a member? (y/n): ";
     cin >> isMember;
@@ -59,7 +92,7 @@ int main() {
 
     cout << "\n=========== RECEIPT ==========\n";
     cout << left << setw(15) << "Food Item:" << setw(15) << foodName << endl;
-    cout << left << setw(15) << "Item Code:" << setw(15) << itemCode << endl;
+    cout << left << setw(15) << "Size:" << setw(15) << size << endl;
     cout << left << setw(15) << "Quantity:" << setw(15) << quantity << endl;
 
     cout << fixed << setprecision(2);
@@ -74,14 +107,12 @@ int main() {
     // Inventory Audit Table
     cout << "\n====== INVENTORY AUDIT ======\n";
     cout << left << setw(15) << "Item Name"
-         << setw(10) << "Code"
          << setw(10) << "Qty"
          << setw(12) << "Unit Price"
          << setw(12) << "Subtotal"
          << endl;
 
     cout << left << setw(15) << foodName
-         << setw(10) << itemCode
          << setw(10) << quantity
          << setw(12) << unitPrice
          << setw(12) << subCost
